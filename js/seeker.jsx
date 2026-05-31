@@ -146,7 +146,7 @@ function VacancyFeed({ onRespond }) {
                 color: f===filter ? '#0A0A0A' : '#fff',
                 border: f===filter
                   ? '1px solid var(--accent)'
-                  : '1px solid rgba(255,255,255,0.32)',
+                  : '1px solid rgba(255,255,255,0.24)',
                 backdropFilter:'blur(10px)',
                 WebkitBackdropFilter:'blur(10px)',
                 boxShadow: f===filter
