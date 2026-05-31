@@ -51,27 +51,36 @@ function gradientFor(color, seed=0) {
 }
 
 // A 9:16 video-stand-in with grain + soft "person" silhouette
-function VideoPlaceholder({ color, seed=0, children, style, label }) {
+function VideoPlaceholder({ color, seed=0, children, style, label, src }) {
   return (
     <div style={{
       position:'absolute', inset:0,
-      background: gradientFor(color, seed),
+      background: src ? `url(${src}) center / cover no-repeat` : gradientFor(color, seed),
       overflow:'hidden', ...style,
     }}>
-      {/* soft silhouette */}
-      <div style={{
-        position:'absolute', left:'50%', bottom:'-6%', transform:'translateX(-50%)',
-        width:'76%', aspectRatio:'1/1.35',
-        background:`radial-gradient(50% 32% at 50% 22%, ${shade(color,70)} 0%, transparent 60%),
-                    radial-gradient(60% 50% at 50% 90%, ${shade(color,30)} 0%, transparent 60%)`,
-        filter:'blur(6px)', opacity:0.85,
-      }} />
-      {/* grain dots */}
+      {!src && (
+        <div style={{
+          position:'absolute', left:'50%', bottom:'-6%', transform:'translateX(-50%)',
+          width:'76%', aspectRatio:'1/1.35',
+          background:`radial-gradient(50% 32% at 50% 22%, ${shade(color,70)} 0%, transparent 60%),
+                      radial-gradient(60% 50% at 50% 90%, ${shade(color,30)} 0%, transparent 60%)`,
+          filter:'blur(6px)', opacity:0.85,
+        }} />
+      )}
+
+      {src && (
+        <div style={{
+          position:'absolute', inset:0,
+          background:'linear-gradient(to bottom, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.02) 42%, rgba(0,0,0,0.16) 100%)',
+        }} />
+      )}
+
       <div style={{
         position:'absolute', inset:0, opacity:0.10, mixBlendMode:'overlay',
         backgroundImage:'radial-gradient(rgba(255,255,255,0.9) 1px, transparent 1.1px)',
         backgroundSize:'4px 4px',
       }} />
+
       {label && (
         <div style={{
           position:'absolute', top:150, left:16, fontSize:11, fontWeight:700,
@@ -83,6 +92,7 @@ function VideoPlaceholder({ color, seed=0, children, style, label }) {
             boxShadow:'0 0 8px #FF3B30'}} /> видео
         </div>
       )}
+
       {children}
     </div>
   );
