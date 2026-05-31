@@ -307,7 +307,7 @@ function MyResponses() {
           return (
             <div key={r.id} style={{background:'var(--surface)', border:'1px solid var(--border)',
               borderRadius:18, padding:'14px', display:'flex', alignItems:'center', gap:13}}>
-              <LogoCircle color={r.color} letter={r.company[0]} size={48} />
+              <LogoCircle color={v.color} letter={v.company[0]} src={v.logo} size={38} />
               <div style={{flex:1, minWidth:0}}>
                 <div style={{fontSize:15.5, fontWeight:700, whiteSpace:'nowrap', overflow:'hidden',
                   textOverflow:'ellipsis'}}>{r.position}</div>
