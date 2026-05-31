@@ -93,16 +93,69 @@ function VacancyFeed({ onRespond }) {
       </div>
 
       {/* top: title + filter chips */}
-      <div style={{position:'absolute', top:0, left:0, right:0, paddingTop:54,
-        background:'linear-gradient(to bottom, rgba(0,0,0,0.55), transparent)'}}>
-        <div style={{padding:'4px 18px 10px', display:'flex', alignItems:'baseline', justifyContent:'space-between'}}>
-          <span className="u" style={{fontSize:21, fontWeight:800, letterSpacing:'-0.03em'}}>
-            JOBS</span>
-          <span style={{fontSize:12.5, fontWeight:700, color:'rgba(255,255,255,0.7)'}}>Лента вакансий</span>
+      <div style={{
+        position:'absolute',
+        top:0,
+        left:0,
+        right:0,
+        paddingTop:54,
+        zIndex:20,
+        background:'linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 56%, rgba(0,0,0,0.20) 100%)',
+        backdropFilter:'blur(10px)',
+        WebkitBackdropFilter:'blur(10px)',
+        borderBottom:'1px solid rgba(255,255,255,0.08)',
+      }}>
+        <div style={{
+          padding:'4px 18px 10px',
+          display:'flex',
+          alignItems:'baseline',
+          justifyContent:'space-between'
+        }}>
+          <span className="u" style={{
+            fontSize:21,
+            fontWeight:800,
+            letterSpacing:'-0.03em',
+            textShadow:'0 2px 10px rgba(0,0,0,0.9)'
+          }}>
+            JOBS
+          </span>
+      
+          <span style={{
+            fontSize:12.5,
+            fontWeight:700,
+            color:'rgba(255,255,255,0.82)',
+            textShadow:'0 2px 8px rgba(0,0,0,0.9)'
+          }}>
+            Лента вакансий
+          </span>
         </div>
-        <div style={{display:'flex', gap:8, overflowX:'auto', padding:'0 18px 12px'}}>
+      
+        <div style={{
+          display:'flex',
+          gap:8,
+          overflowX:'auto',
+          padding:'0 18px 12px'
+        }}>
           {SPHERE_FILTERS.map(f => (
-            <Chip key={f} active={f===filter} onClick={()=>setFilter(f)}>{f}</Chip>
+            <Chip
+              key={f}
+              active={f===filter}
+              onClick={()=>setFilter(f)}
+              style={{
+                background: f===filter ? 'var(--accent)' : 'rgba(0,0,0,0.48)',
+                color: f===filter ? '#0A0A0A' : '#fff',
+                border: f===filter
+                  ? '1px solid var(--accent)'
+                  : '1px solid rgba(255,255,255,0.32)',
+                backdropFilter:'blur(10px)',
+                WebkitBackdropFilter:'blur(10px)',
+                boxShadow: f===filter
+                  ? '0 0 18px rgba(191,255,0,0.32)'
+                  : '0 4px 14px rgba(0,0,0,0.35)',
+              }}
+            >
+              {f}
+            </Chip>
           ))}
         </div>
       </div>
