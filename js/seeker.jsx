@@ -100,7 +100,7 @@ function VacancyFeed({ onRespond }) {
         right:0,
         paddingTop:54,
         zIndex:20,
-        background:'linear-gradient(to bottom, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.70) 56%, rgba(0,0,0,0.20) 100%)',
+        background:'linear-gradient(to bottom, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.56) 58%, rgba(0,0,0,0.06) 100%)',
         backdropFilter:'blur(10px)',
         WebkitBackdropFilter:'blur(10px)',
         borderBottom:'1px solid rgba(255,255,255,0.08)',
@@ -142,7 +142,7 @@ function VacancyFeed({ onRespond }) {
               active={f===filter}
               onClick={()=>setFilter(f)}
               style={{
-                background: f===filter ? 'var(--accent)' : 'rgba(0,0,0,0.48)',
+                background: f===filter ? 'var(--accent)' : 'rgba(0,0,0,0.34)',
                 color: f===filter ? '#0A0A0A' : '#fff',
                 border: f===filter
                   ? '1px solid var(--accent)'
