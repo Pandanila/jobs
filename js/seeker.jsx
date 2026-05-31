@@ -48,7 +48,7 @@ function VacancyFeed({ onRespond }) {
               height:'100%', width:'100%', position:'relative',
               scrollSnapAlign:'start', scrollSnapStop:'always',
             }}>
-              <VideoPlaceholder color={v.color} seed={i*0.21} label />
+              <VideoPlaceholder color={v.color} seed={i*0.21} src={v.cover} label />
               {/* gradient scrim bottom */}
               <div style={{position:'absolute', inset:0,
                 background:'linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.18) 38%, transparent 62%)'}} />
