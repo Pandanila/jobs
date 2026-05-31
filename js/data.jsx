@@ -1,6 +1,6 @@
 // ===== Mock data =====
 const VACANCIES = [
-  { id:1, company:'Авито', position:'Менеджер по продажам', sphere:'Продажи', format:'Гибрид', location:'Москва', salary:'80 000 — 120 000 ₽', tags:['b2b','crm','переговоры'], color:'#1A1AFF', likes:342, questions:['Расскажи о своём опыте в продажах','Почему хочешь к нам?'] },
+  { id:1, company:'Авито', position:'Менеджер по продажам', sphere:'Продажи', format:'Гибрид', location:'Москва', salary:'80 000 — 120 000 ₽', tags:['b2b','crm','переговоры'], color:'#1A1AFF', cover:'uploads/avito-vacancy-preview.png', likes:342, questions:['Расскажи о своём опыте в продажах','Почему хочешь к нам?'] },
   { id:2, company:'Сбер', position:'HR-специалист', sphere:'HR', format:'Офис', location:'Москва', salary:'70 000 — 90 000 ₽', tags:['рекрутинг','1С','hh.ru'], color:'#1DB954', likes:188, questions:['Как ты ищешь кандидатов?','Твой главный кейс?'] },
   { id:3, company:'Wildberries', position:'Менеджер маркетплейса', sphere:'Ритейл', format:'Удалёнка', location:'Удалённо', salary:'60 000 — 100 000 ₽', tags:['wb','excel','аналитика'], color:'#FF6B35', likes:521, questions:['Опыт работы с маркетплейсами?'] },
   { id:4, company:'Тинькофф', position:'Менеджер поддержки', sphere:'Сервис', format:'Гибрид', location:'Санкт-Петербург', salary:'55 000 — 75 000 ₽', tags:['клиентский сервис','конфликты','cx'], color:'#FFD600', likes:276, questions:['Как ты работаешь с трудным клиентом?'] },
