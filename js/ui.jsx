@@ -99,16 +99,39 @@ function VideoPlaceholder({ color, seed=0, children, style, label, src }) {
 }
 
 // ======================= AVATAR / LOGO =======================
-function LogoCircle({ color, letter, size=44 }) {
+function LogoCircle({ color, letter, size=44, src }) {
   return (
     <div style={{
-      width:size, height:size, borderRadius:'30%', flexShrink:0,
-      background: gradientFor(color, 0.3),
-      display:'flex', alignItems:'center', justifyContent:'center',
-      fontFamily:"'Unbounded',sans-serif", fontWeight:800,
-      fontSize:size*0.42, color:'#fff',
+      width:size,
+      height:size,
+      borderRadius:'30%',
+      flexShrink:0,
+      background: src ? 'rgba(255,255,255,0.95)' : gradientFor(color, 0.3),
+      display:'flex',
+      alignItems:'center',
+      justifyContent:'center',
+      fontFamily:"'Unbounded',sans-serif",
+      fontWeight:800,
+      fontSize:size*0.42,
+      color:'#fff',
       boxShadow:`0 4px 14px -4px ${color}aa`,
-    }}>{letter}</div>
+      overflow:'hidden',
+    }}>
+      {src ? (
+        <img
+          src={src}
+          alt={letter || 'logo'}
+          style={{
+            width:'78%',
+            height:'78%',
+            objectFit:'contain',
+            display:'block',
+          }}
+        />
+      ) : (
+        letter
+      )}
+    </div>
   );
 }
 function Avatar({ color, initials, size=44, accent=false }) {
